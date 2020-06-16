@@ -56,9 +56,9 @@ args_url="$args_url$repository"
 if [ -n "$folder" ]; then
 	echo "adding parameter folder"
 	# support for runtime folder path
-  if [ -f "$folder" ]; then
-    folder=$(cat $folder)
-  fi
+	if [ -f "$folder" ]; then
+	  folder=$(cat $folder)
+	fi
 	args_url="$args_url/$folder"
 fi
 
