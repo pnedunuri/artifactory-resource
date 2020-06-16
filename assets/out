@@ -53,13 +53,12 @@ filename=$(basename "$abs_file")
 args_url="$endpoint"
 args_url="$args_url$repository"
 
-# support for dynamic folder
-if [ -f "$folder" ]; then
-  folder=$(cat $folder)
-fi
-
 if [ -n "$folder" ]; then
 	echo "adding parameter folder"
+	# support for runtime folder path
+  if [ -f "$folder" ]; then
+    folder=$(cat $folder)
+  fi
 	args_url="$args_url/$folder"
 fi
 
